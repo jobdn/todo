@@ -2,13 +2,13 @@ body {
   background: #1b1a17;
 }
 
-.tuduList {
+.todoList {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.tuduList__input {
+.todoList__input {
   margin-right: 8px;
 }
 
@@ -17,7 +17,7 @@ body {
   margin-bottom: 6px;
 }
 
-.tuduList__button {
+.todoList__button {
   margin-top: 26px;
 }
 
