@@ -1,31 +1,26 @@
 body {
   background: #1b1a17;
 }
+
 .tuduList {
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.tuduList__row {
-}
+
 .tuduList__input {
   margin-right: 8px;
 }
+
 .input_1 {
   margin-top: 23px;
   margin-bottom: 6px;
 }
-.tuduTitle__content {
-}
-.input_2 {
-}
+
 .tuduList__button {
   margin-top: 26px;
 }
-.tuduList__content__button {
-}
-.tuduList {
-}
+
 input {
   width: 267px;
   height: 32px;
@@ -34,4 +29,4 @@ input {
   border: 1px solid #ff8303;
   background: #242320;
   color: white;
-}
+}/*# sourceMappingURL=style.css.map */
