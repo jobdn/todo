@@ -1,3 +1,17 @@
+@charset "UTF-8";
+input {
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: transparent;
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  -webkit-appearance: none; /* Для WebKit браузеров, например, Safari и Chrome */
+  -moz-appearance: none; /* Для Firefox */
+  appearance: none; /* Стандартная */
+}
+
 body {
   background: #1b1a17;
 }
@@ -21,12 +35,67 @@ body {
   margin-top: 26px;
 }
 
-input {
+.todoTitle__content__input {
   width: 267px;
   height: 32px;
   flex-shrink: 0;
   border-radius: 4px;
   border: 1px solid #ff8303;
   background: #242320;
-  color: white;
+  color: rgba(240, 227, 202, 0.64);
+  text-align: center;
+  font-family: Roboto;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 18px; /* 128.571% */
+}
+
+.container {
+  margin-top: 33px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.addTask {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 321px;
+  height: 72px;
+  padding: 16px;
+  border-radius: 8px;
+  border: 2px solid #A35709;
+  background: #242320;
+}
+
+.addTask__content__inputTitle {
+  color: #F0E3CA;
+  font-family: Roboto;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  width: 176.667px;
+  background: #242320;
+}
+
+.addTask__content__inputBody {
+  color: #F0E3CA;
+  font-family: Roboto;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  width: 265px;
+  background: #242320;
+}
+
+.addTask__container {
+  margin-right: 16px;
+}
+
+.addTask__title {
+  margin-bottom: 10px;
 }/*# sourceMappingURL=style.css.map */
