@@ -1,5 +1,20 @@
 @charset "UTF-8";
-input {
+body {
+  background: #1b1a17;
+}
+body button {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+  -webkit-appearance: none; /* для вебкит-браузеров, таких как Safari и Chrome */
+  -moz-appearance: none; /* для Firefox */
+  appearance: none; /* Стандартное свойство, но может не поддерживаться всеми браузерами */
+}
+body input {
   margin: 0;
   padding: 0;
   border: none;
@@ -12,90 +27,32 @@ input {
   appearance: none; /* Стандартная */
 }
 
-body {
-  background: #1b1a17;
-}
-
 .todoList {
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.todoList__input {
-  margin-right: 8px;
-}
-
-.input_1 {
-  margin-top: 23px;
-  margin-bottom: 6px;
-}
-
-.todoList__button {
   margin-top: 26px;
 }
-
-.todoTitle__content__input {
+.todoList__row {
+  margin-right: 8px;
+}
+.todoList .input_1 {
+  margin-bottom: 6px;
+}
+.todoList__button {
+  margin-top: 3px;
+}
+.todoList .todoTitle__content__input {
   width: 267px;
+  padding-left: 5px;
   height: 32px;
   flex-shrink: 0;
   border-radius: 4px;
   border: 1px solid #ff8303;
   background: #242320;
   color: rgba(240, 227, 202, 0.64);
-  text-align: center;
   font-family: Roboto;
   font-size: 14px;
   font-style: normal;
-  font-weight: 400;
   line-height: 18px; /* 128.571% */
-}
-
-.container {
-  margin-top: 33px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.addTask {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 321px;
-  height: 72px;
-  padding: 16px;
-  border-radius: 8px;
-  border: 2px solid #A35709;
-  background: #242320;
-}
-
-.addTask__content__inputTitle {
-  color: #F0E3CA;
-  font-family: Roboto;
-  font-size: 22px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: normal;
-  width: 176.667px;
-  background: #242320;
-}
-
-.addTask__content__inputBody {
-  color: #F0E3CA;
-  font-family: Roboto;
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-  width: 265px;
-  background: #242320;
-}
-
-.addTask__container {
-  margin-right: 16px;
-}
-
-.addTask__title {
-  margin-bottom: 10px;
 }/*# sourceMappingURL=style.css.map */

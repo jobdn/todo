@@ -1,0 +1,43 @@
+.container {
+  margin-top: 33px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.container .addTask {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 321px;
+  height: 72px;
+  padding: 16px;
+  border-radius: 8px;
+  border: 2px solid #a35709;
+  background: #242320;
+}
+.container .addTask__content__inputTitle {
+  font-family: Roboto;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  width: 176.667px;
+  background: #242320;
+  color: #f0e3ca;
+}
+.container .addTask__content__inputBody {
+  color: #f0e3ca;
+  font-family: Roboto;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  width: 265px;
+  background: #242320;
+}
+.container .addTask__container {
+  margin-right: 16px;
+}
+.container .addTask__title {
+  margin-bottom: 10px;
+}/*# sourceMappingURL=styleTask.css.map */
