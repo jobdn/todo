@@ -34,3 +34,71 @@ document.querySelector(".buttonAdd").addEventListener("click", function () {
   document.querySelector(".todoTitle__content__input").value = "";
   document.querySelectorAll(".todoTitle__content__input")[1].value = "";
 });
+document
+  .querySelector(".container")
+  .addEventListener("click", function (event) {
+    const clickedElement = event.target.closest(".addTask");
+    const clickedElementTwo = document.querySelector(".addTask__title");
+    const clickedElementThree = document.querySelector(
+      ".addTask__content__inputBody"
+    );
+    const inThisElement = document.querySelector(".addTask");
+    // не работает так как я хочу
+    if (
+      clickedElement === event.target ||
+      clickedElementThree === event.target ||
+      clickedElementTwo === event.target
+    ) {
+      const buttonMenu = clickedElement.querySelector(".button-menu");
+      if (clickedElement.dataset.clicked) {
+        // Если элемент был ранее нажат, удалите кнопочное меню
+        if (buttonMenu) {
+          buttonMenu.remove();
+        }
+        // Удалите атрибут, указывающий на то, что элемент был нажат
+        delete clickedElement.dataset.clicked;
+      } else if (clickedElement === event.target) {
+        // Логика добавления меню
+        let htmlButtonMmenu = `
+            <div class="button-menu">
+                <div class="button-menu__content">
+                    <div class="button-menu__container share">
+                        <img src="imj/Share.svg" alt="share icon" />
+                    </div>
+                    <div class="button-menu__container info">i</div>
+                    <div class="button-menu__container edit">
+                        <img src="imj/Edit.svg" alt="edit icon" />
+                    </div>
+                </div>
+            </div>
+            `;
+
+        clickedElement.insertAdjacentHTML("beforeend", htmlButtonMmenu);
+
+        // Отметьте элемент как нажатый
+        clickedElement.dataset.clicked = "true";
+      }
+    }
+  });
+document.addEventListener("click", function (event) {
+  const clickedElement = event.target.closest(".addTask");
+  const buttonMenus = document.querySelectorAll(".button-menu");
+
+  // Если клик был внутри элемента .addTask или на элементе .button-menu (или его дочерних элементах), то не делаем ничего
+  if (clickedElement || event.target.closest(".button-menu")) {
+    return;
+  }
+
+  // Иначе, проходимся по всем .button-menu и удаляем их
+  buttonMenus.forEach((menu) => {
+    menu.remove();
+  });
+
+  // Для всех .addTask с атрибутом data-clicked удаляем этот атрибут
+  const activeAddTasks = document.querySelectorAll(
+    ".addTask[data-clicked='true']"
+  );
+  activeAddTasks.forEach((task) => {
+    delete task.dataset.clicked;
+  });
+});

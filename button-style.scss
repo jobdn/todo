@@ -1,0 +1,41 @@
+.button-menu {
+}
+.button-menu__content {
+display: flex;
+align-items: center;
+justify-content: end;
+margin-top: -10px;
+}
+.button-menu__container {
+width: 36px;
+height: 36px;
+flex-shrink: 0;
+border-radius: 6px;
+border: 1px solid #A35709;
+background: #242320;
+margin-right: 8px;
+}
+.share{
+display:flex;
+justify-content:center;
+align-items:center;
+}
+.info {
+display:flex;
+justify-content:center;
+align-items:center;
+color: #FFF;
+text-align: center;
+font-family: Roboto;
+font-size: 16px;
+font-style: normal;
+font-weight: 700;
+line-height: 18px; /* 112.5% */
+
+}
+.edit {
+display:flex;
+justify-content:center;
+align-items:center;
+margin: 2px;
+}

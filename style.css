@@ -2,6 +2,10 @@
 body {
   background: #1b1a17;
 }
+body .container-all {
+  width: 360px;
+  margin: 0 auto;
+}
 body button {
   background: none;
   color: inherit;
