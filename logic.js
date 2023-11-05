@@ -14,12 +14,36 @@ document.querySelector(".buttonAdd").addEventListener("click", function () {
   let inputAddBody = (template.querySelector(
     ".addTask__content__inputBody"
   ).value = taskBody);
-
   // Добавить обработчик событий для кнопки удаления в клонированном шаблоне
   template
     .querySelector(".addTask__buttonDell")
     .addEventListener("click", function () {
-      this.closest(".addTask").remove();
+      const addTaskDell = this.closest('.addTask')
+      let confirmHtml = `<div class='overlay'></div></div><div class="container-all-all">
+      <div class = "container-confirm">
+        <div class="container-confirm__flex">
+          <div class="question-confirm">Delete this task?</div>
+          <button class="button-style yes">
+            <div class="text-confirm-yes">Yes</div>
+          </button>
+          <button class="button-style no">
+            <div class="text-confirm-no">No</div>
+          </button>
+        </div>
+      </div>
+      </div>`;
+      document.body.insertAdjacentHTML("afterbegin", confirmHtml)
+      document.querySelector('.container-all-all').addEventListener('click', function(event){
+      const clickedYes = event.target.closest('.text-confirm-yes')
+      if (clickedYes){
+        addTaskDell.remove();
+      document.querySelector(".overlay").remove();
+      document.querySelector(".container-all-all").remove();
+      }
+      else {document.querySelector(".overlay").remove();
+      document.querySelector(".container-all-all").remove();}
+      })
+      // this.closest(".addTask").remove();
     });
 
   // Добавляем содержимое шаблона в нужный контейнер

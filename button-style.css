@@ -1,4 +1,8 @@
 .button-menu__content {
+  position: absolute;
+  z-index: 0;
+  top: 78px;
+  right: 18px;
   display: flex;
   align-items: center;
   justify-content: end;

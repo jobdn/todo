@@ -6,12 +6,13 @@
   flex-direction: column;
 }
 .container .addTask {
+  position: relative;
   margin-bottom: 16px;
   display: flex;
   align-items: center;
   justify-content: center;
   width: 321px;
-  height: 72px;
+  height: 78px;
   padding: 16px;
   border-radius: 8px;
   border: 2px solid #a35709;
