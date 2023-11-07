@@ -18,7 +18,7 @@ document.querySelector(".buttonAdd").addEventListener("click", function () {
   template
     .querySelector(".addTask__buttonDell")
     .addEventListener("click", function () {
-      const addTaskDell = this.closest('.addTask')
+      const addTaskDell = this.closest(".addTask");
       let confirmHtml = `<div class='overlay'></div></div><div class="container-all-all">
       <div class = "container-confirm">
         <div class="container-confirm__flex">
@@ -32,17 +32,20 @@ document.querySelector(".buttonAdd").addEventListener("click", function () {
         </div>
       </div>
       </div>`;
-      document.body.insertAdjacentHTML("afterbegin", confirmHtml)
-      document.querySelector('.container-all-all').addEventListener('click', function(event){
-      const clickedYes = event.target.closest('.text-confirm-yes')
-      if (clickedYes){
-        addTaskDell.remove();
-      document.querySelector(".overlay").remove();
-      document.querySelector(".container-all-all").remove();
-      }
-      else {document.querySelector(".overlay").remove();
-      document.querySelector(".container-all-all").remove();}
-      })
+      document.body.insertAdjacentHTML("afterbegin", confirmHtml);
+      document
+        .querySelector(".container-all-all")
+        .addEventListener("click", function (event) {
+          const clickedYes = event.target.closest(".text-confirm-yes");
+          if (clickedYes) {
+            addTaskDell.remove();
+            document.querySelector(".overlay").remove();
+            document.querySelector(".container-all-all").remove();
+          } else {
+            document.querySelector(".overlay").remove();
+            document.querySelector(".container-all-all").remove();
+          }
+        });
       // this.closest(".addTask").remove();
     });
 
@@ -101,6 +104,79 @@ document
 
         // Отметьте элемент как нажатый
         clickedElement.dataset.clicked = "true";
+        const editButton = document.querySelector(
+          ".button-menu__container.edit"
+        );
+        editButton.addEventListener("click", function (event) {
+          let editHtml = ` <div class='overlay'></div><div class="edit-window">
+          <div class="edit-window__container">
+    <div class="edit-window__input mini">
+      <input
+        type="text"
+        name="mini-input"
+        class="edit-window__content-input"
+        placeholder="Mini Input..."
+      />
+    </div>
+    <div class="edit-window__input max">
+      <textarea
+        name="max-input"
+        class="edit-window__content-textarea"
+        placeholder="Max Input..."
+        cols="30"
+        rows="10"
+      ></textarea>
+    </div> 
+    <div class="edit-window__container-button">
+      <button class="edit-window__button cancel">Cancel</button>
+      <button class="edit-window__button save">Save</button>
+    </div>
+  </div>
+</div>`;
+          const addTask = this.closest(".addTask");
+          document.body.insertAdjacentHTML("afterbegin", editHtml);
+          let addInMiniInput = addTask.querySelector(
+            ".addTask__content__inputTitle"
+          ).value;
+          let addInMaxInput = addTask.querySelector(
+            ".addTask__content__inputBody"
+          ).value;
+          document.querySelector(".edit-window__content-input").value =
+            addInMiniInput;
+          document.querySelector(".edit-window__content-textarea").value =
+            addInMaxInput;
+          document
+            .querySelector(".edit-window")
+            .addEventListener("click", function (event) {
+              const clickedCancel = event.target.closest(
+                ".edit-window__button.cancel"
+              );
+              const clickedSave = event.target.closest(
+                ".edit-window__button.save"
+              );
+              if (clickedCancel) {
+                document.querySelector(".overlay").remove();
+                document.querySelector(".edit-window").remove();
+              } else if (clickedSave) {
+                let miniInput = document.querySelector(
+                  ".edit-window__content-input"
+                ).value;
+                let maxInput = document.querySelector(
+                  ".edit-window__content-textarea"
+                ).value;
+                addTask.querySelector(".addTask__content__inputTitle").value =
+                  miniInput;
+                addTask.querySelector(".addTask__content__inputBody").value =
+                  maxInput;
+                  document.querySelector(".overlay").remove();
+                document.querySelector(".edit-window").remove();
+              }
+              // else {
+              //   document.querySelector(".overlay").remove();
+              //   document.querySelector(".edit-window").remove();
+              // }
+            });
+        });
       }
     }
   });
